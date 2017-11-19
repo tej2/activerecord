@@ -57,7 +57,7 @@ class main
         $record->save();
         $form .= '<i>Updated id '.$records->id.'</i>';
         $records = accounts::findAll();
-        $tableGen = htmlTable::genarateTableFromMultiArray($records);
+        $tableGen = displayTable::genarateTableFromMultiArray($records);
         $form .= $tableGen;
 
         $form .= 'Delete one record';
@@ -67,8 +67,72 @@ class main
         $record->delete();
 	$form .= '<i>Record '.$records->id.' deleted</i>';
 	$records = accounts::findAll();
-        $tableGen = htmlTable::genarateTableFromMultiArray($records);
+        $tableGen = displayTable::genarateTableFromMultiArray($records);
 	$form .= $tableGen;
+
+	$form .= '<b>Table</b> <i>Todos</i>';
+	$form .= 'Select all records';
+	$records = todos::findAll();
+	$tableGen = displayTable::generateTableFromMultiArray($records);
+	$form .= $tableGen;
+
+	$form .= 'Select one record';
+	$id = 3;
+	$records = todos::findOne($id);
+	$tableGen = displayTable::generateTableFromOneRecord($records);
+	$form .= '<i>Retrieved record '.$id.'</i>';
+	$form .= $tableGen;
+
+	$form .= 'Insert one record';
+	$record = new todo();
+        $record->owneremail="tej2@njit.edu";
+        $record->ownerid=24;
+        $record->createddate="04-20-2018";
+        $record->duedate="11-22-2018";
+        $record->message="create mobile application";
+        $record->isdone=0;
+        $lastInsertedId=$record->save();
+	$records = todos::findAll();
+	$tableGen = displayTable::generateTableFromMultiArray($records);
+	$form .= '<i>Inserted</i>';
+	$form .= $tableGen;
+
+        $form .= 'Update one record';
+        $records = todos::findOne($lastInsertedId);
+        $record = new todo();
+        $record->id=$records->id;
+	$record->createddate="04-12-2018";
+        $record->save();
+        $form .= '<i>Updated id '.$records->id.'</i>';
+        $records = todos::findAll();
+        $tableGen = displayTable::genarateTableFromMultiArray($records);
+        $form .= $tableGen;
+
+        $form .= 'Delete one record';
+        $records = todos::findOne($lastInsertedId);
+        $record = new todo();
+        $record->id=$records->id;
+        $record->delete();
+	$form .= '<i>Record '.$records->id.' deleted</i>';
+        $records = todos::findAll();
+        $tableGen = displayTable::genarateTableFromMultiArray($records);
+        $form .= $tableGen;
+
+        $form .= '</form> ';
+	print($form);
+	}
+}
+?>
+
+
+
+
+
+
+
+
+
+
 
 
 
