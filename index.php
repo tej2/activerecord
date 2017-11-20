@@ -185,7 +185,7 @@ class main
         $record->id=$records->id;
         $record->password="09877";
         $record->save();
-        $form .= '<i><br>Updated id '.$records->id.'</i>';
+        $form .= '<i><br>Updated password of id '.$records->id.'</i>';
         $records = accounts::findAll();
         $tableGen = displayHTML::displayTable($records);
         $form .= $tableGen;
@@ -233,7 +233,7 @@ class main
         $record->id=$records->id;
 	$record->createddate="2018-02-16";
         $record->save();
-        $form .= '<i><br>Updated id '.$records->id.'</i>';
+        $form .= '<i><br>Updated created date of id '.$records->id.'</i>';
         $records = todos::findAll();
         $tableGen = displayHTML::displayTable($records);
         $form .= $tableGen;
