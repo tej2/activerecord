@@ -3,36 +3,35 @@
 class displayHTML{
     public static function displayTable($records){
     	   $tableGen = '<table border="4">';
-        foreach($arr as $row => $innerArray){
-            $tableGen .= '<tr>';
-        foreach($innerArray as $innerRow => $value){
-            $tableGen .= '<th>' . $innerRow . '</th>';
-}
+           $tableGen .= '<tr>';
+        foreach($records[0] as $key=>$value){
+            $tableGen .= '<th>' . htmlspecialchars($key) . '</th>';
+        } 
             $tableGen .= '</tr>';
-            break;
-	    }
-        foreach($arr as $row => $innerArray){
+        foreach($records as $key=>$value){
             $tableGen .= '<tr>';
-        foreach($innerArray as $innerRow => $value){
-            $tableGen .= '<td>' . $value . '</td>';
-	    }
-	    $tableGen .= '</tr>';
-	    }
-            $tableGen .= '</table><hr>';
-            return $tableGen;
-	    }
+        foreach($value as $key2=>$value2)
+                {
+            $tableGen .= '<td>' . htmlspecialchars($value2) . '<br></td>';
+                }
+            $tableGen .= '</tr>';
+        }
+            $tableGen .= '</tbody></table>';
+        return $tableGen;
+    }     
+
 
     public static function displayTableAlternate($records){
     	    $tableGen = '<table border="4">';
             $tableGen .= '<tr>';
-        foreach($innerArray as $innerRow => $value){
-            $tableGen .= '<th>' . $innerRow . '</th>';
-	    }
-            $tableGen .= '</tr>';
-        foreach($innerArray as $value){
+        foreach($records as $key => $value){
+            $tableGen .= '<th>' . htmlspecialchars($key) . '</th>';
+        }
+       	    $tableGen .= '</tr>';
+        foreach($records as $value){
             $tableGen .= '<td>' . $value . '</td>';
-	    }
-        $tableGen .= '</tr></table><hr>';
+        }
+            $tableGen .= '</tr></table>';
         return $tableGen;
 	}
 }
