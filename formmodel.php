@@ -1,6 +1,7 @@
 <?php
 abstract class formmodel {
-    public function save()
+	protected $tableName;
+   public function save()
     {
        if ($this->id != '') {
             $sql = $this->update();
