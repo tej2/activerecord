@@ -3,8 +3,6 @@
 abstract class collection {
     static public function create() {
         $model = new static::$modelName;
-        return $formmodel;
-        $model = new static::$modelName;
         return $model;
 	}
     static public function findAll() {
