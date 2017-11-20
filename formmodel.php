@@ -19,8 +19,8 @@ abstract class formmodel {
         return $id;
 }
     private function insert() {
-        $modelName=get_called_class();
-	$tableName = $formmodelName::getTablename();
+        $modelName=static::$modelName;
+	$tableName = $modelName::getTablename();
         $modelName=static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
@@ -32,8 +32,8 @@ abstract class formmodel {
 	}
 
     private function update() {
-        $modelName=get_called_class();
-	$tableName = $formmodelName::getTablename();
+        $modelName=static::$modelName;
+	$tableName = $modelName::getTablename();
         $modelName=static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
