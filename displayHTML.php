@@ -1,8 +1,8 @@
 <?php
 
-class displayTable{
-    public static function generateTableFromMultiArray($arr){
-            $tableGen = '<table border="4">';
+class displayHTML{
+    public static function displayTable($records){
+    	   $tableGen = '<table border="4">';
         foreach($arr as $row => $innerArray){
             $tableGen .= '<tr>';
         foreach($innerArray as $innerRow => $value){
@@ -22,8 +22,8 @@ class displayTable{
             return $tableGen;
 	    }
 
-    public static function generateTableFromOneRecord($innerArray){
-            $tableGen = '<table border="4">';
+    public static function displayTableAlternate($records){
+    	    $tableGen = '<table border="4">';
             $tableGen .= '<tr>';
         foreach($innerArray as $innerRow => $value){
             $tableGen .= '<th>' . $innerRow . '</th>';
