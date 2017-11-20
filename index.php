@@ -42,7 +42,7 @@ class main
 	$record->phone="983-989-9889";
 	$record->gender="female";
 	$record->password="9876578";
-	$lastInsertesId=$record->save();
+	$lastInsertedId=$record->save();
 	$records = accounts::findAll();
 	$tableGen = displayTable::generateTableFromMultiArray($records);
 	$form .= '<i>Inserted</i>';
