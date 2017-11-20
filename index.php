@@ -170,6 +170,7 @@ class main
 	$record->fname="Tiffany";
 	$record->lname="Johnson";
 	$record->phone="983-989-9889";
+	$record->birthday="1994-09-08";
 	$record->gender="female";
 	$record->password="9876578";
 	$lastInsertedId=$record->save();
