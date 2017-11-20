@@ -1,7 +1,7 @@
 <?php
 
 class accounts extends collection {
-	protected static $formmodelName = 'account';
+	protected static $modelName = 'account';
 	}
 ?>
 

@@ -9,7 +9,7 @@ class account extends formmodel {
 	public $birthday;
 	public $gender;
 	public $password;
-	protected static $formmodelName = 'account';
+	protected static $modelName = 'account';
 	public static function getTablename()
 	{
 		$tableName='accounts';
