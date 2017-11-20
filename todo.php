@@ -7,8 +7,7 @@ class todo extends formmodel {
     public $duedate;
     public $message;
     public $isdone;
-    public $isdone;
-    
+ 
     public static function getTablename(){
         $tableName='todos';
         return $tableName;
