@@ -14,6 +14,7 @@ class Manage {
     }
 }
 spl_autoload_register(array('Manage', 'autoload'));
+$obj=new displayHTML;
 $obj=new main();
 class dbConn{
     protected static $db;
@@ -207,7 +208,7 @@ class main
 	$form .= 'Select one record';
 	$id = 3;
 	$records = todos::findOne($id);
-	$tableGen = displayHtml::displayTableAlternate($records);
+	$tableGen = displayHTML::displayTableAlternate($records);
 	$form .= '<i>Retrieved record '.$id.'</i>';
 	$form .= $tableGen;
 
