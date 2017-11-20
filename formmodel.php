@@ -19,8 +19,8 @@ abstract class formmodel {
         return $id;
 }
     private function insert() {
-        $formmodelName=static::$formmodelName;
-        $tableName = $formmodelName::getTablename();
+        $modelName=static::$modelName;
+        $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
         $columnString = implode(',', array_flip($array));
         $valueString = ':'.implode(',:', array_flip($array));
@@ -30,8 +30,8 @@ abstract class formmodel {
 	}
 
     private function update() {
-        $formmodelName=static::$formmodelName;
-        $tableName = $formmodelName::getTablename();
+        $modelName=static::$modelName;
+        $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
         $comma = " ";
         $sql = 'UPDATE '.$tableName.' SET ';
@@ -46,8 +46,8 @@ abstract class formmodel {
 	}
     public function delete() {
         $db = dbConn::getConnection();
-        $formmodelName=static::$formmodelName;
-        $tableName = $formmodelName::getTablename();
+        $modelName=static::$modelName;
+        $tableName = $modelName::getTablename();
         $sql = 'DELETE FROM '.$tableName.' WHERE id='.$this->id;
         $statement = $db->prepare($sql);
         $statement->execute();
