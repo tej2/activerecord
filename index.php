@@ -1,5 +1,4 @@
 <?php
-
 ini_set ('display_errors', 'On');
 error_reporting(E_ALL);
 
@@ -25,7 +24,7 @@ class main
 	$form .= '<b>Table</b> <i>Accounts</i>';
 	$form .= 'Select all records';
 	$records = accounts::findAll();
-	$tableGen = displayTable::generateTableFromMultiArray($records);
+        $tableGen = displayTable::generateTableFromMultiArray($records);
 	$form .= $tableGen;
 	
 	$form .= 'Select one record';
@@ -42,7 +41,7 @@ class main
 	$record->lname="Johnson";
 	$record->phone="983-989-9889";
 	$record->gender="female";
-	$record->pasword="9876578";
+	$record->password="9876578";
 	$lastInsertesId=$record->save();
 	$records = accounts::findAll();
 	$tableGen = displayTable::generateTableFromMultiArray($records);
