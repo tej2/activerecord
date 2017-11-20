@@ -56,7 +56,7 @@ class main
         $record->save();
         $form .= '<i>Updated id '.$records->id.'</i>';
         $records = accounts::findAll();
-        $tableGen = displayTable::genarateTableFromMultiArray($records);
+        $tableGen = displayTable::generateTableFromMultiArray($records);
         $form .= $tableGen;
 
         $form .= 'Delete one record';
@@ -66,7 +66,7 @@ class main
         $record->delete();
 	$form .= '<i>Record '.$records->id.' deleted</i>';
 	$records = accounts::findAll();
-        $tableGen = displayTable::genarateTableFromMultiArray($records);
+        $tableGen = displayTable::generateTableFromMultiArray($records);
 	$form .= $tableGen;
 
 	$form .= '<b>Table</b> <i>Todos</i>';
@@ -104,7 +104,7 @@ class main
         $record->save();
         $form .= '<i>Updated id '.$records->id.'</i>';
         $records = todos::findAll();
-        $tableGen = displayTable::genarateTableFromMultiArray($records);
+        $tableGen = displayTable::generateTableFromMultiArray($records);
         $form .= $tableGen;
 
         $form .= 'Delete one record';
@@ -114,7 +114,7 @@ class main
         $record->delete();
 	$form .= '<i>Record '.$records->id.' deleted</i>';
         $records = todos::findAll();
-        $tableGen = displayTable::genarateTableFromMultiArray($records);
+        $tableGen = displayTable::generateTableFromMultiArray($records);
         $form .= $tableGen;
 
         $form .= '</form> ';
