@@ -151,7 +151,7 @@ class main
 {
 	public function __construct() {
 	$form = '<form method ="post" enctype="multipart/form-data">';
-	$form .= '<b>Table</b> <i>Accounts</i>';
+	$form .= '<center><b>Table</b> <i>Accounts</i>';
 	$form .= 'Select all records';
 	$records = accounts::findAll();
         $tableGen = displayHTML::displayTable($records);
@@ -161,7 +161,7 @@ class main
 	$id = 4;
 	$records = accounts::findOne($id);
 	$tableGen = displayHTML::displayTableAlternate($records);
-	$form .= '<i>Retrieved record '.$id.'</i>';
+	$form .= '<i><br>Retrieved record '.$id.'</i>';
 	$form .= $tableGen;
 
 	$form .= 'Insert one record';
@@ -175,7 +175,7 @@ class main
 	$lastInsertedId=$record->save();
 	$records = accounts::findAll();
 	$tableGen = displayHTML::displayTable($records);
-	$form .= '<i>Inserted</i>';
+	$form .= '<i><br>Inserted</i>';
 	$form .= $tableGen;
 
         $form .= 'Update one record';
@@ -184,7 +184,7 @@ class main
         $record->id=$records->id;
         $record->password="09877";
         $record->save();
-        $form .= '<i>Updated id '.$records->id.'</i>';
+        $form .= '<i><br>Updated id '.$records->id.'</i>';
         $records = accounts::findAll();
         $tableGen = displayHTML::displayTable($records);
         $form .= $tableGen;
@@ -194,7 +194,7 @@ class main
         $record= new account();
         $record->id=$records->id;
         $record->delete();
-	$form .= '<i>Record '.$records->id.' deleted</i>';
+	$form .= '<i><br>Record '.$records->id.' deleted</i>';
 	$records = accounts::findAll();
         $tableGen = displayHTML::displayTable($records);
 	$form .= $tableGen;
@@ -209,7 +209,7 @@ class main
 	$id = 3;
 	$records = todos::findOne($id);
 	$tableGen = displayHTML::displayTableAlternate($records);
-	$form .= '<i>Retrieved record '.$id.'</i>';
+	$form .= '<i><br>Retrieved record '.$id.'</i>';
 	$form .= $tableGen;
 
 	$form .= 'Insert one record';
@@ -223,7 +223,7 @@ class main
         $lastInsertedId=$record->save();
 	$records = todos::findAll();
 	$tableGen = displayHTML::displayTable($records);
-	$form .= '<i>Inserted</i>';
+	$form .= '<i><br>Inserted</i>';
 	$form .= $tableGen;
 
         $form .= 'Update one record';
@@ -232,7 +232,7 @@ class main
         $record->id=$records->id;
 	$record->createddate="04-12-2018";
         $record->save();
-        $form .= '<i>Updated id '.$records->id.'</i>';
+        $form .= '<i><br>Updated id '.$records->id.'</i>';
         $records = todos::findAll();
         $tableGen = displayHTML::displayTable($records);
         $form .= $tableGen;
@@ -242,12 +242,12 @@ class main
         $record = new todo();
         $record->id=$records->id;
         $record->delete();
-	$form .= '<i>Record '.$records->id.' deleted</i>';
+	$form .= '<i><br>Record '.$records->id.' deleted</i>';
         $records = todos::findAll();
         $tableGen = displayHTML::displayTable($records);
         $form .= $tableGen;
 
-        $form .= '</form> ';
+        $form .= '</center></form> ';
 	print($form);
 	}
 }
