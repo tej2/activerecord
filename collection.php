@@ -2,7 +2,7 @@
 
 abstract class collection {
     static public function create() {
-        $model = new static::$formmmdelName;
+        $model = new static::$modelName;
         return $model;
 	}
     static public function findAll() {
@@ -11,7 +11,7 @@ abstract class collection {
         $sql = 'SELECT * FROM ' . $tableName;
         $statement = $db->prepare($sql);
         $statement->execute();
-        $class = static::$formmodelName;
+        $class = static::$modelName;
         $statement->setFetchMode(PDO::FETCH_CLASS, $class);
         $recordsSet =  $statement->fetchAll();
         return $recordsSet;
@@ -22,7 +22,7 @@ abstract class collection {
         $sql = 'SELECT * FROM ' . $tableName . ' WHERE id =' . $id;
         $statement = $db->prepare($sql);
         $statement->execute();
-        $class = static::$formmodelName;
+        $class = static::$modelName;
         $statement->setFetchMode(PDO::FETCH_CLASS, $class);
         $recordsSet =  $statement->fetchAll();
         return $recordsSet[0];
