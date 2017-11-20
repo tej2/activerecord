@@ -175,7 +175,7 @@ class main
 	$lastInsertedId=$record->save();
 	$records = accounts::findAll();
 	$tableGen = displayHTML::displayTable($records);
-	$form .= '<i><br>Inserted</i>';
+	$form .= '<i><br>Inserted '.$records->id.'</i>';
 	$form .= $tableGen;
 
         $form .= '<p>Update one record';
@@ -199,8 +199,8 @@ class main
         $tableGen = displayHTML::displayTable($records);
 	$form .= $tableGen;
 
-	$form .= '<b>Table</b> <i>Todos</i>';
-	$form .= 'Select all records';
+	$form .= '<p><b>Table</b> <i>Todos</i>';
+	$form .= '<br>Select all records';
 	$records = todos::findAll();
 	$tableGen = displayHTML::displayTable($records);
 	$form .= $tableGen;
@@ -223,7 +223,7 @@ class main
         $lastInsertedId=$record->save();
 	$records = todos::findAll();
 	$tableGen = displayHTML::displayTable($records);
-	$form .= '<i><br>Inserted</i>';
+	$form .= '<i><br>Inserted '.$records->id.'</i>';
 	$form .= $tableGen;
 
         $form .= '<p>Update one record';
