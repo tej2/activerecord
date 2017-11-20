@@ -2,13 +2,10 @@
 
 abstract class collection {
     static public function create() {
-<<<<<<< HEAD
-        $formmodel = new static::$formmmdelName;
+        $model = new static::$modelName;
         return $formmodel;
-=======
         $model = new static::$modelName;
         return $model;
->>>>>>> ca2e363f9624fca62047ecb606074b33272b8e3f
 	}
     static public function findAll() {
         $db = dbConn::getConnection();
