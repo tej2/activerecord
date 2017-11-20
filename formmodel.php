@@ -19,8 +19,8 @@ abstract class formmodel {
         return $id;
 }
     private function insert() {
-        $formmodelName=static::$formmodelName;
-        $tableName = $formmodelName::getTablename();
+        $modelName=get_called_class();
+	$tableName = $formmodelName::getTablename();
         $array = get_object_vars($this);
         $columnString = implode(',', array_flip($array));
         $valueString = ':'.implode(',:', array_flip($array));
@@ -30,8 +30,8 @@ abstract class formmodel {
 	}
 
     private function update() {
-        $formmodelName=static::$formmodelName;
-        $tableName = $formmodelName::getTablename();
+        $modelName=get_called_class();
+	$tableName = $formmodelName::getTablename();
         $array = get_object_vars($this);
         $comma = " ";
         $sql = 'UPDATE '.$tableName.' SET ';
