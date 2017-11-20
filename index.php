@@ -175,7 +175,7 @@ class main
 	$lastInsertedId=$record->save();
 	$records = accounts::findAll();
 	$tableGen = displayHTML::displayTable($records);
-	$form .= '<i><br>Inserted  '.$lstId.'</i>';
+	$form .= '<i><br>Inserted  '.$lastInsertedId.'</i>';
 	$form .= $tableGen;
 
         $form .= '<p>Update one record';
@@ -216,21 +216,21 @@ class main
 	$record = new todo();
         $record->owneremail="tej2@njit.edu";
         $record->ownerid=24;
-        $record->createddate="04-20-2018";
-        $record->duedate="11-22-2018";
+        $record->createddate="2018-01-20";
+        $record->duedate="2018-02-20";
         $record->message="create mobile application";
         $record->isdone=0;
         $lastInsertedId=$record->save();
 	$records = todos::findAll();
 	$tableGen = displayHTML::displayTable($records);
-	$form .= '<i><br>Inserted '.$lstId.'</i>';
+	$form .= '<i><br>Inserted '.$lastInsertedId.'</i>';
 	$form .= $tableGen;
 
         $form .= '<p>Update one record';
         $records = todos::findOne($lastInsertedId);
         $record = new todo();
         $record->id=$records->id;
-	$record->createddate="04-12-2018";
+	$record->createddate="2018-02-16";
         $record->save();
         $form .= '<i><br>Updated id '.$records->id.'</i>';
         $records = todos::findAll();
